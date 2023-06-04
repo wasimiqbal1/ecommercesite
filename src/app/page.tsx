@@ -19,8 +19,13 @@ export default async function Home() {
   const data:Iproducts[] = await getProductData();
   console.log(data);
 
-  return 
+  return( 
   <div>
-    
-  </div>;
+    {data.map((item)=>(
+      <h1>
+        {item.title}
+      </h1>
+    ))}  
+  </div>
+  )
 }

@@ -9,15 +9,28 @@ export const product = {
             type: "string"
         },
         {
+            name: "price",
+            title: "Product Price",
+            type: "number"
+        },
+
+        {
             name: "description",
             title: "Product Description",
             type: "string"
         },
         {
+            name: "category",
+            title: "Product Category",
+            type: "string"
+        },
+
+        {
             name: "Image",
             title: "Product Image",
             type: "image"
         }
+
         
     ]
 }
