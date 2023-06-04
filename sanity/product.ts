@@ -19,6 +19,5 @@ export const product = {
             type: "image"
         }
         
-
     ]
 }
