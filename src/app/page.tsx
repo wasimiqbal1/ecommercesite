@@ -3,15 +3,26 @@ import { client } from "@/lib/sanityClient";
 
 export const getProductData = async () => {
   const res = await client.fetch(`*[_type=="product"]{
-    title, 
-    description
+    price, 
+    _id,
+    title,
+    image,
+    category ->{
+      name
+    }
   }`);
   return res
 }
 
 interface Iproducts {
   title:string,
-  description:string
+  _id:string,
+  description:string,
+  price:number,
+  // image:IImage,
+  category:{
+    name:string
+  }
 }
 
 
