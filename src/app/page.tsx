@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { client } from "@/lib/sanityClient";
+import { Image as IImage } from "sanity";  
+
 
 export const getProductData = async () => {
   const res = await client.fetch(`*[_type=="product"]{
@@ -19,7 +21,7 @@ interface Iproducts {
   _id: string;
   description: string;
   price: number;
-  // image:IImage,
+  image:IImage,
   category: {
     name: string;
   };
