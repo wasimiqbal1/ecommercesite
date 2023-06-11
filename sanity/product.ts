@@ -22,7 +22,7 @@ export const product = {
             type: "string"
         },
         {
-            name: "Image",
+            name: "image",
             title: "Product Image",
             type: "image"
         },
@@ -31,7 +31,7 @@ export const product = {
             title:"Product Category",
             type:"reference",
             to:[{
-                type:"category"
+                type: "category"
             }]
                 
         })

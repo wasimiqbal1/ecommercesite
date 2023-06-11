@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { client } from "@/lib/sanityClient";
 import { Image as IImage } from "sanity";  
+import { urlForImage } from "../../sanity/lib/image";
 
 
 export const getProductData = async () => {
@@ -8,7 +9,7 @@ export const getProductData = async () => {
     price,
       _id,
       title,
-      image, 
+      image,
       category -> {
         name
       }
@@ -17,10 +18,10 @@ export const getProductData = async () => {
 };
 
 interface Iproducts {
-  title: string;
-  _id: string;
-  description: string;
-  price: number;
+  title: string,
+  _id: string,
+  description: string,
+  price: number,
   image:IImage,
   category: {
     name: string;
@@ -28,13 +29,18 @@ interface Iproducts {
 }
 
 export default async function Home() {
+
   const data: Iproducts[] = await getProductData();
-  console.log(data);
 
   return (
-    <div>
+    <div className="grid grid-cols-3">
       {data.map((item) => (
-        <h1>{item.title}</h1>
+      <div>
+        <Image 
+        width={300}
+        height={300}
+        src={urlForImage(item.image).url()} alt="Product"/>
+      </div>
       ))}
     </div>
   );
