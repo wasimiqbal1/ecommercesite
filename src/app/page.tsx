@@ -33,14 +33,18 @@ export default async function Home() {
   const data: Iproducts[] = await getProductData();
 
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-[repeat(3,auto)] justify-center gap-x-9 ">
       {data.map((item) => (
       <div>
         <Image 
-        width={300}
+        width={200}
         height={300}
+        className="max-h-[200px] object-cover object-top"
         src={urlForImage(item.image).url()} alt="Product"/>
-      </div>
+        <h2>{item.title}</h2>
+        <h3>${item.price}</h3>
+        <button className="border py-2 px-6 rounded bg-blue-500 text-white  ">Add to Cart</button>
+        </div>
       ))}
     </div>
   );
