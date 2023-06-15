@@ -43,7 +43,7 @@ export default async function Home() {
         src={urlForImage(item.image).url()} alt="Product"/>
         <h2>{item.title}</h2>
         <h3>${item.price}</h3>
-        <button className="border py-2 px-6 rounded bg-blue-500 text-white  ">Add to Cart</button>
+        <button className="border py-2 px-6 rounded bg-blue-600 text-white  ">Add to Cart</button>
         </div>
       ))}
     </div>
