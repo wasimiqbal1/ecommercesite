@@ -10,6 +10,5 @@ export const category = defineType({
       title: "Category Name",
       type: "string",
     }),
-  ]
- }
-)
+  ],
+});
